@@ -11,9 +11,16 @@ namespace Excercise.Lists.Utils
     {
         public static void ComposeFile(string dir, string fileName, List<People> list)
         {
-            if (!Directory.Exists(dir))
+            try
+            {
+                if (!Directory.Exists(dir))
             {
                 Directory.CreateDirectory(dir);
+            }
+            }
+            catch (Exception Ex)
+            {
+                Console.WriteLine(Ex.ToString());
             }
 
             try
